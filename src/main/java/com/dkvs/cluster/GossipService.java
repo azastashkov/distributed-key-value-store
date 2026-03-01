@@ -6,8 +6,11 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -22,7 +25,13 @@ public class GossipService {
     public GossipService(ClusterService clusterService, DkvsProperties properties) {
         this.clusterService = clusterService;
         this.properties = properties;
+
+        var requestFactory = new SimpleClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(2000);
+        requestFactory.setReadTimeout(2000);
+
         this.restClient = RestClient.builder()
+                .requestFactory(requestFactory)
                 .defaultHeader("Content-Type", "application/json")
                 .build();
     }
@@ -54,9 +63,10 @@ public class GossipService {
                 .toList();
 
         if (!peers.isEmpty()) {
-            // Pick one random peer
-            Node target = peers.get(ThreadLocalRandom.current().nextInt(peers.size()));
-            return List.of(target);
+            // Pick up to 3 random peers for faster state propagation
+            List<Node> shuffled = new ArrayList<>(peers);
+            Collections.shuffle(shuffled, ThreadLocalRandom.current());
+            return shuffled.subList(0, Math.min(3, shuffled.size()));
         }
 
         // No peers known yet - try seed addresses
