@@ -60,7 +60,7 @@ echo -n "my-key" | base64 | tr '+/' '-_' | tr -d '='
 
 ```bash
 # Store the value "hello world" under key "my-key"
-curl -X PUT http://localhost:8080/api/data/bXkta2V5 \
+curl --noproxy '*' -X PUT http://localhost:8080/api/data/bXkta2V5 \
   -H "Content-Type: application/octet-stream" \
   -d "hello world"
 ```
@@ -69,7 +69,7 @@ curl -X PUT http://localhost:8080/api/data/bXkta2V5 \
 
 ```bash
 # Retrieve the value for key "my-key"
-curl http://localhost:8080/api/data/bXkta2V5
+curl --noproxy '*' http://localhost:8080/api/data/bXkta2V5
 # Output: hello world
 ```
 
@@ -80,12 +80,12 @@ curl http://localhost:8080/api/data/bXkta2V5
 KEY=$(echo -n "user:1001" | base64 | tr '+/' '-_' | tr -d '=')
 
 # Store JSON value
-curl -X PUT "http://localhost:8080/api/data/${KEY}" \
+curl --noproxy '*' -X PUT "http://localhost:8080/api/data/${KEY}" \
   -H "Content-Type: application/octet-stream" \
   -d '{"name":"Alice","email":"alice@example.com"}'
 
 # Read it back
-curl "http://localhost:8080/api/data/${KEY}"
+curl --noproxy '*' "http://localhost:8080/api/data/${KEY}"
 # Output: {"name":"Alice","email":"alice@example.com"}
 ```
 
@@ -94,12 +94,12 @@ curl "http://localhost:8080/api/data/${KEY}"
 ```bash
 # Write to node 1 (port 8080)
 KEY=$(echo -n "distributed-test" | base64 | tr '+/' '-_' | tr -d '=')
-curl -X PUT "http://localhost:8080/api/data/${KEY}" \
+curl --noproxy '*' -X PUT "http://localhost:8080/api/data/${KEY}" \
   -H "Content-Type: application/octet-stream" \
   -d "data written to node 1"
 
 # Read from node 3 (port 8082) — the cluster replicates and routes correctly
-curl "http://localhost:8082/api/data/${KEY}"
+curl --noproxy '*' "http://localhost:8082/api/data/${KEY}"
 # Output: data written to node 1
 ```
 
@@ -109,12 +109,12 @@ curl "http://localhost:8082/api/data/${KEY}"
 KEY=$(echo -n "binary-file" | base64 | tr '+/' '-_' | tr -d '=')
 
 # Store a file
-curl -X PUT "http://localhost:8080/api/data/${KEY}" \
+curl --noproxy '*' -X PUT "http://localhost:8080/api/data/${KEY}" \
   -H "Content-Type: application/octet-stream" \
   --data-binary @myfile.bin
 
 # Retrieve it
-curl "http://localhost:8080/api/data/${KEY}" -o retrieved.bin
+curl --noproxy '*' "http://localhost:8080/api/data/${KEY}" -o retrieved.bin
 ```
 
 ### Check version metadata
@@ -122,11 +122,11 @@ curl "http://localhost:8080/api/data/${KEY}" -o retrieved.bin
 ```bash
 # Response headers include version info
 KEY=$(echo -n "versioned-key" | base64 | tr '+/' '-_' | tr -d '=')
-curl -X PUT "http://localhost:8080/api/data/${KEY}" \
+curl --noproxy '*' -X PUT "http://localhost:8080/api/data/${KEY}" \
   -H "Content-Type: application/octet-stream" \
   -d "version 1"
 
-curl -v "http://localhost:8080/api/data/${KEY}" 2>&1 | grep X-DKVS
+curl --noproxy '*' -v "http://localhost:8080/api/data/${KEY}" 2>&1 | grep X-DKVS
 # X-DKVS-Version: 1740700000000
 # X-DKVS-Timestamp: 1740700000000
 ```

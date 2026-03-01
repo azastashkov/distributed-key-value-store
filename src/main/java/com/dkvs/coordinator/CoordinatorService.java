@@ -152,7 +152,19 @@ public class CoordinatorService {
                             responseCount, effectiveQuorum));
         }
 
+        // If replicas returned no data, check local storage as a fallback.
+        // This covers the case where the hash ring changed after a write
+        // (e.g. during cluster startup) and the current replicas differ
+        // from the ones that originally stored the value.
         if (responses.isEmpty()) {
+            boolean localWasQueried = replicas.stream()
+                    .anyMatch(r -> r.getId().equals(localNodeId));
+            if (!localWasQueried) {
+                VersionedValue localValue = storageEngine.get(key);
+                if (localValue != null) {
+                    return localValue;
+                }
+            }
             return null;
         }
 
