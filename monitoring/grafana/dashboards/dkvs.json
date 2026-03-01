@@ -7,7 +7,7 @@
   "links": [],
   "panels": [
     {
-      "datasource": { "type": "prometheus", "uid": "" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "fieldConfig": {
         "defaults": {
           "color": { "mode": "palette-classic" },
@@ -43,7 +43,7 @@
       "type": "timeseries",
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "" },
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
           "expr": "dkvs_storage_key_count",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "datasource": { "type": "prometheus", "uid": "" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "fieldConfig": {
         "defaults": {
           "color": { "mode": "palette-classic" },
@@ -75,7 +75,7 @@
       "type": "stat",
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "" },
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
           "expr": "dkvs_storage_key_count",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "datasource": { "type": "prometheus", "uid": "" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "fieldConfig": {
         "defaults": {
           "color": { "mode": "palette-classic" },
@@ -115,7 +115,7 @@
       "type": "timeseries",
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "" },
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
           "expr": "dkvs_storage_memtable_size_bytes",
           "legendFormat": "{{node}}",
           "refId": "A"
@@ -123,7 +123,7 @@
       ]
     },
     {
-      "datasource": { "type": "prometheus", "uid": "" },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
       "fieldConfig": {
         "defaults": {
           "color": { "mode": "palette-classic" },
@@ -155,7 +155,7 @@
       "type": "timeseries",
       "targets": [
         {
-          "datasource": { "type": "prometheus", "uid": "" },
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
           "expr": "dkvs_storage_sstable_count",
           "legendFormat": "{{node}}",
           "refId": "A"
