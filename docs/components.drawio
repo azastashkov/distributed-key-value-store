@@ -30,7 +30,7 @@
         <!-- ============================================================ -->
         <!-- API Layer -->
         <!-- ============================================================ -->
-        <mxCell id="api-layer" value="&lt;b&gt;API Layer&lt;/b&gt;&amp;nbsp;&amp;nbsp;(com.dkvs.api)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
+        <mxCell id="api-layer" value="&lt;b&gt;API Layer&lt;/b&gt;&amp;nbsp;&amp;nbsp;(org.dkvs.api)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
           <mxGeometry x="310" y="100" width="540" height="180" as="geometry"/>
         </mxCell>
 
@@ -45,7 +45,7 @@
         <!-- ============================================================ -->
         <!-- Coordinator Layer -->
         <!-- ============================================================ -->
-        <mxCell id="coord-layer" value="&lt;b&gt;Coordination Layer&lt;/b&gt;&amp;nbsp;&amp;nbsp;(com.dkvs.coordinator)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
+        <mxCell id="coord-layer" value="&lt;b&gt;Coordination Layer&lt;/b&gt;&amp;nbsp;&amp;nbsp;(org.dkvs.coordinator)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
           <mxGeometry x="310" y="330" width="540" height="140" as="geometry"/>
         </mxCell>
 
@@ -56,7 +56,7 @@
         <!-- ============================================================ -->
         <!-- Cluster Layer -->
         <!-- ============================================================ -->
-        <mxCell id="cluster-layer" value="&lt;b&gt;Cluster Layer&lt;/b&gt;&amp;nbsp;&amp;nbsp;(com.dkvs.cluster)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
+        <mxCell id="cluster-layer" value="&lt;b&gt;Cluster Layer&lt;/b&gt;&amp;nbsp;&amp;nbsp;(org.dkvs.cluster)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
           <mxGeometry x="920" y="100" width="570" height="370" as="geometry"/>
         </mxCell>
 
@@ -79,7 +79,7 @@
         <!-- ============================================================ -->
         <!-- Storage Layer -->
         <!-- ============================================================ -->
-        <mxCell id="storage-layer" value="&lt;b&gt;Storage Layer&lt;/b&gt;&amp;nbsp;&amp;nbsp;(com.dkvs.storage)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
+        <mxCell id="storage-layer" value="&lt;b&gt;Storage Layer&lt;/b&gt;&amp;nbsp;&amp;nbsp;(org.dkvs.storage)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
           <mxGeometry x="310" y="520" width="1180" height="500" as="geometry"/>
         </mxCell>
 
@@ -110,7 +110,7 @@
         <!-- ============================================================ -->
         <!-- Model -->
         <!-- ============================================================ -->
-        <mxCell id="model-layer" value="&lt;b&gt;Model&lt;/b&gt;&amp;nbsp;&amp;nbsp;(com.dkvs.model)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
+        <mxCell id="model-layer" value="&lt;b&gt;Model&lt;/b&gt;&amp;nbsp;&amp;nbsp;(org.dkvs.model)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
           <mxGeometry x="920" y="520" width="260" height="120" as="geometry"/>
         </mxCell>
 
@@ -121,7 +121,7 @@
         <!-- ============================================================ -->
         <!-- Config -->
         <!-- ============================================================ -->
-        <mxCell id="config-layer" value="&lt;b&gt;Config&lt;/b&gt;&amp;nbsp;&amp;nbsp;(com.dkvs.config)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#F0F0F0;strokeColor=#999999;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
+        <mxCell id="config-layer" value="&lt;b&gt;Config&lt;/b&gt;&amp;nbsp;&amp;nbsp;(org.dkvs.config)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;fillColor=#F0F0F0;strokeColor=#999999;fontSize=12;arcSize=8;spacingTop=2;spacingLeft=8;" vertex="1" parent="1">
           <mxGeometry x="1210" y="520" width="270" height="120" as="geometry"/>
         </mxCell>
 
